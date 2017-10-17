@@ -1,21 +1,3 @@
--- single line comment
-CREATE TABLE "songs1" (
-	"id" serial primary key,
-	"rank" integer,
-	"artist" varchar(80) not null,
-	"track" varchar(120) not null,
-	"published" date
-);/* has to end with semi colon*/
-INSERT INTO "songs1" ("rank", "track", "artist", "published")
-VALUES (357, 'Everlong', 'Foo Fighters', '9-6-1997');
-
-SELECT * FROM "songs";
-SELECT * FROM "songs" limit 10;
-SELECT * FROM "songs" ORDER BY "published" DESC LIMIT 5;
-SELECT * FROM "songs" WHERE "published" > '1-1-2000';
-SELECT * FROM "songs" WHERE "published" > '1-1-2000';
-
---update
 
 CREATE TABLE syntax_practice (
     user_id serial PRIMARY KEY,
@@ -97,8 +79,15 @@ SELECT "username" , "account_balance" FROM "syntax_practice" ORDER BY "account_b
 
 SELECT * FROM "syntax_practice" WHERE "account_balance" > 100;
 
--- update record
+-- add record
+INSERT INTO syntax_practice (username, city, transactions_completed, transactions_attempted, account_balance) VALUES ('Josh', 'St. Louis', 5, 6, 1000000);
 
-UPDATE "syntax_practice" SET "username" = 'josh', "
+--Delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
 
+SELECT * FROM "syntax_practice" WHERE "city" = 'miami'OR "city" = 'phoenix';
 
+DELETE FROM "syntax_practice" WHERE "city" = 'miami' OR "city" = 'phoenix';
+
+SELECT * FROM "syntax_practice"
+
+finished
